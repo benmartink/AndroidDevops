@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 			keyAlias "release"
 			keyPassword "P@ssw0rd"
-			storeFile file("C:\AndroidKeys\keystore.jks")
+			storeFile file("C:\\AndroidKeys\\keystore.jks")
 			storePassword "P@ssw0rd"
         }
 		
