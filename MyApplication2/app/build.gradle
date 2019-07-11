@@ -13,7 +13,12 @@ android {
     }
 	
 	signingConfigs {
-        config
+        release {
+			keyAlias "release"
+			keyPassword "P@ssw0rd"
+			storeFile file("C:\\AndroidKeys\\keystore.jks")
+			storePassword "P@ssw0rd"
+        }
     }
 	
     buildTypes {
@@ -21,9 +26,6 @@ android {
             minifyEnabled true
 			shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-			keyPassword "P@ssw0rd"
-			storeFile file("C:\\AndroidKeys\\keystore.jks")
-			storePassword "P@ssw0rd"
         }
 		
 		debug {
@@ -32,21 +34,6 @@ android {
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-debug-rules.pro'
 		}
     }
-}
-
-// set the keystore if we set the path
-if (KEYSTORE != "") {
-
-    // initialize the signing
-    android.signingConfigs.config.storeFile = file('../keystore/' + KEYSTORE)
-    android.signingConfigs.config.storePassword = STORE_PASSWORD
-    android.signingConfigs.config.keyAlias = KEY_ALIAS
-    android.signingConfigs.config.keyPassword = KEY_PASSWORD
-
-    // set this signing for both build types
-    android.buildTypes.release.signingConfig = android.signingConfigs.config
-    android.buildTypes.debug.signingConfig = android.signingConfigs.config
-
 }
 
 dependencies {
