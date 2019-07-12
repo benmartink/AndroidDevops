@@ -14,10 +14,10 @@ android {
 	
 	signingConfigs {
         release {
-			keyAlias props['release']
-			keyPassword props['P@ssw0rd']
-			storeFile file("C:\\AndroidKeys\\keystore.jks")
-			storePassword props['P@ssw0rd']
+			keyAlias 'release'
+			keyPassword 'P@ssw0rd'
+			storeFile "C:\\AndroidKeys\\keystore.jks"
+			storePassword 'P@ssw0rd'
         }
     }
 	
