@@ -16,7 +16,7 @@ android {
         release {
 			keyAlias 'release'
 			keyPassword 'P@ssw0rd'
-			storeFile "C:\\AndroidKeys\\keystore.jks"
+			storeFile file("release.keystore")
 			storePassword 'P@ssw0rd'
         }
     }
